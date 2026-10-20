@@ -17,6 +17,7 @@ python3 -m http.server 8000 --bind 127.0.0.1 --directory dist
 
 - `data/profile.json`：姓名、单位、介绍、头像路径和个人链接；`affiliationZh`、`departmentZh`、`introZh`、`bioZh` 和 `updatedZh` 为对应的中文资料。
 - `data/publications.json`：论文、作者、年份、会议、链接和核验来源；`summary` 为英文简介，`summary_zh` 为中文简介。
+- `data/github.json`：TinyLLaVA Factory 的 GitHub Stars、Forks、Watchers 核验快照。页面始终先显示具体数字和日期，随后通过公开 GitHub API 自动更新；新数据在访客浏览器缓存 1 小时，接口不可用时保留带日期的已有数据。Watchers 使用订阅人数 `subscribers_count`。
 - `data/SOURCES.txt`：资料核验记录与不同论文版本的说明。
 - `scripts/build.mjs`：将同一份资料生成为中英文 HTML、论文 JSON 和 BibTeX。
 - `dist/styles.css`：颜色、排版和响应式布局。

@@ -79,3 +79,51 @@ if ('IntersectionObserver' in window) {
   }, {rootMargin:'-12% 0px -65% 0px', threshold:0});
   document.querySelectorAll('main > section').forEach(section => observer.observe(section));
 }
+
+// The HTML contains a verified snapshot, so GitHub limits never leave empty metrics.
+async function refreshRepositoryStats() {
+  const element = document.querySelector('.project-stats');
+  if (!element) return;
+  const repository = element.dataset.repository;
+  if (!/^[A-Za-z\d_.-]+\/[A-Za-z\d_.-]+$/.test(repository)) return;
+  const fields = ['stargazers_count', 'forks_count', 'subscribers_count'];
+  const snapshotTime = Date.parse(element.dataset.checkedAt);
+  const key = `github-stats:${repository}`;
+  const ttl = 60 * 60 * 1000;
+  const valid = data => data && fields.every(field => Number.isSafeInteger(data[field]) && data[field] >= 0) && Number.isFinite(Date.parse(data.checked_at));
+  function render(data, source) {
+    fields.forEach(field => { element.querySelector(`[data-repo-count="${field}"]`).textContent = data[field].toLocaleString('en-US'); });
+    const updated = document.querySelector('[data-repo-updated]');
+    updated.dateTime = data.checked_at;
+    updated.title = data.checked_at;
+    updated.textContent = new Intl.DateTimeFormat(isChinese ? 'zh-CN' : 'en-US', {year:'numeric',month:isChinese ? 'numeric' : 'short',day:'numeric',timeZone:'Asia/Shanghai'}).format(new Date(data.checked_at));
+    element.dataset.statsSource = source;
+  }
+  try {
+    const cached = JSON.parse(localStorage.getItem(key));
+    const timestamp = Date.parse(cached?.checked_at);
+    if (valid(cached) && timestamp >= snapshotTime && timestamp <= Date.now() && Date.now() - timestamp < ttl) {
+      render(cached, 'cache');
+      return;
+    }
+  } catch { /* Storage can be unavailable; the snapshot and API still work. */ }
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 5000);
+  try {
+    const response = await fetch(`https://api.github.com/repos/${repository}`, {
+      headers: {Accept:'application/vnd.github+json'},
+      signal:controller.signal,
+      credentials:'omit'
+    });
+    if (!response.ok) return;
+    const result = await response.json();
+    if (result.full_name?.toLowerCase() !== repository.toLowerCase()) return;
+    const data = Object.fromEntries(fields.map(field => [field,result[field]]));
+    data.checked_at = new Date().toISOString();
+    if (!valid(data)) return;
+    render(data, 'live');
+    try { localStorage.setItem(key,JSON.stringify(data)); } catch { /* Optional cache. */ }
+  } catch { /* Keep the dated snapshot when offline or rate limited. */ }
+  finally { clearTimeout(timeout); }
+}
+refreshRepositoryStats();

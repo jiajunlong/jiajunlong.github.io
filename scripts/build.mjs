@@ -5,6 +5,7 @@ import path from 'node:path';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const profile = JSON.parse(await readFile(path.join(root, 'data/profile.json'), 'utf8'));
 const research = JSON.parse(await readFile(path.join(root, 'data/publications.json'), 'utf8'));
+const repository = JSON.parse(await readFile(path.join(root, 'data/github.json'), 'utf8'));
 const papers = [...research.publications, ...(research.additional_publications || [])];
 const recentIds = new Set((research.additional_publications || []).map(p => p.id));
 const e = value => String(value ?? '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
@@ -17,7 +18,10 @@ const icon = (name, size = 15) => {
     search:'<circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/>',
     mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/>',
     menu:'<path d="M4 6h16M4 12h16M4 18h16"/>',
-    code:'<path d="m8 6-6 6 6 6m8-12 6 6-6 6m-5 3 2-18"/>'
+    code:'<path d="m8 6-6 6 6 6m8-12 6 6-6 6m-5 3 2-18"/>',
+    star:'<path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9L12 3Z"/>',
+    fork:'<circle cx="6" cy="4" r="2"/><circle cx="18" cy="4" r="2"/><circle cx="12" cy="20" r="2"/><path d="M6 6v3a6 6 0 0 0 6 6m6-9v3a6 6 0 0 1-6 6v3"/>',
+    eye:'<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>'
   };
   return `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${icons[name] || icons.arrow}</svg>`;
 };
@@ -63,6 +67,21 @@ const years = [...new Set(papers.map(p => p.year))].sort((a,b)=>b-a);
 const order = ['longforge','policylong','entropylong','litelong','longbench-pro','layer-normalization','tinyllava-factory','tinyllava'];
 papers.sort((a,b)=>order.indexOf(a.id)-order.indexOf(b.id));
 const structuredData = { '@context':'https://schema.org', '@type':'Person', name:profile.name, alternateName:profile.chineseName, affiliation:{'@type':'CollegeOrUniversity',name:profile.affiliation}, sameAs:[profile.scholar,profile.github], knowsAbout:['Long-context modeling','Multimodal large language models'] };
+function renderRepositoryStats(lang) {
+  const zh = lang === 'zh';
+  const stats = [
+    ['stargazers_count','Stars','star','stargazers'],
+    ['forks_count','Forks','fork','forks'],
+    ['subscribers_count','Watchers','eye','watchers']
+  ];
+  for (const [field] of stats) {
+    if (!Number.isSafeInteger(repository[field]) || repository[field] < 0) throw new Error(`Invalid GitHub statistic: ${field}`);
+  }
+  const date = new Date(repository.checked_at);
+  if (!Number.isFinite(date.getTime())) throw new Error('Invalid GitHub statistics date');
+  const formattedDate = new Intl.DateTimeFormat(zh ? 'zh-CN' : 'en-US', {year:'numeric',month:zh ? 'numeric' : 'short',day:'numeric',timeZone:'Asia/Shanghai'}).format(date);
+  return `<div class="project-stats" role="group" aria-label="${zh ? 'GitHub 项目影响力' : 'GitHub project impact'}" data-repository="${e(repository.full_name)}" data-checked-at="${e(repository.checked_at)}" data-stats-source="snapshot">${stats.map(([field,label,glyph,route])=>ext(`${repository.html_url}/${route}`,`${icon(glyph,17)}<span><strong data-repo-count="${field}">${repository[field].toLocaleString('en-US')}</strong><span class="repo-stat-label">${label}</span></span>`,'repo-stat')).join('')}</div><p class="stats-meta">GitHub · ${zh ? '更新于' : 'Updated'} <time data-repo-updated datetime="${e(repository.checked_at)}" title="${e(repository.checked_at)}">${e(formattedDate)}</time></p>`;
+}
 function renderPage(lang) {
   const zh = lang === 'zh';
   const t = (en, cn) => zh ? cn : en;
@@ -101,6 +120,7 @@ function renderPage(lang) {
 <section class="project-section" id="open-source" aria-labelledby="project-title">
   <div class="section-heading"><h2 id="project-title">${t('Open Source','开源项目')}</h2>${ext('https://github.com/TinyLLaVA/TinyLLaVA_Factory',`${t('View on GitHub','在 GitHub 查看')} ${icon('arrow',12)}`,'section-link')}</div>
   <article class="project-card"><div class="project-copy"><div class="project-eyebrow">${icon('github',13)} ${t('FEATURED PROJECT','代表项目')}</div><h3>TinyLLaVA Factory</h3><p>${t('A modular framework for building small-scale multimodal models, with interchangeable model components and reproducible training recipes.','面向小规模多模态大模型的模块化框架，支持灵活替换模型组件，并提供可复现的训练方案。')}</p>
+  ${renderRepositoryStats(lang)}
   <div class="project-actions">${ext('https://github.com/TinyLLaVA/TinyLLaVA_Factory',`${t('Repository','代码仓库')} ${icon('arrow',11)}`)}${ext('https://arxiv.org/abs/2405.11788',t('Paper','论文'))}${ext('https://tinyllava-factory.readthedocs.io/en/latest/',t('Docs','文档'))}${ext('https://huggingface.co/tinyllava',t('Models','模型'))}</div></div>
   <figure class="project-image"><a href="${prefix}assets/tinyllava-architecture.jpg" target="_blank" rel="noopener" aria-label="${t('View full TinyLLaVA Factory architecture diagram','查看 TinyLLaVA Factory 完整架构图')}"><img src="${prefix}assets/tinyllava-architecture.jpg" alt="${t('TinyLLaVA Factory architecture with interchangeable language models, vision encoders, connectors, and training recipes','TinyLLaVA Factory 架构，包含可替换的语言模型、视觉编码器、连接器和训练方案')}" width="1598" height="913" loading="lazy"></a><figcaption>${t('Modular by design. Open for research.','模块化设计，为研究而开源。')}</figcaption></figure></article>
 </section>
