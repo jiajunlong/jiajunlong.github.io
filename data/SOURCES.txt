@@ -1,0 +1,25 @@
+PUBLICATION RESEARCH NOTES
+Verified 2026-10-20 (Asia/Shanghai)
+
+Coverage
+The parent agent successfully read the user's Google Scholar profile in the browser using pagesize=100. Exactly seven articles were shown, with the More button disabled. All seven titles were independently found in primary arXiv or conference-proceedings sources. Therefore publications[] covers the complete Scholar list seen today. Web fetches of Scholar returned 403 and OpenReview returned verification challenges; the browser read resolved Scholar access.
+
+Identity and affiliation
+Scholar ID c9vYGLgAAAAJ belongs to Junlong Jia. The public GitHub profile is https://github.com/jiajunlong (display name Jaber). Lacuna cross-links the same Scholar ID, GitHub, OpenReview and DBLP records. The parent agent read Beihang University and research interests (long-context modeling; multimodal large language models) directly from Scholar. The official AAAI LiteLong paper lists School of Artificial Intelligence, Beihang University for Junlong Jia. Advisor Lei Huang's students page confirms the Chinese name 贾俊龙. The role/degree timeline is not asserted in the data because the accessible direct Scholar record does not establish it.
+
+Canonical publication choices
+1. PolicyLong: COLM 2026; displayed authors use the current primary arXiv v2 list (2026-08-28), which includes Jiang Zhou as the second author. The older seven-author Scholar citation detail is preserved as a version in JSON. arXiv HTML v2 explicitly states publication as a conference paper at COLM 2026.
+2. LongBench Pro: arXiv 2026. Seven authors and metadata verified on arXiv.
+3. EntropyLong: ICLR 2026; seven-author list follows the official ICLR proceedings. The arXiv v1 adds Debing Zhang. Both versions are recorded in JSON. The displayed PDF URL now uses the official ICLR conference paper.
+4. LiteLong: AAAI 2026; official proceedings DOI 10.1609/aaai.v40i37.40390; volume 40(37), pages 31274-31282, published 2026-03-14. The earlier arXiv version is from 2025.
+5. On the Nonlinearity of Layer Normalization: ICML 2024, PMLR 235, pages 37957-37998; author order verified on official PMLR page.
+6. TinyLLaVA Factory: arXiv 2024. Official arXiv links the user-supplied TinyLLaVA Factory repository and Read the Docs documentation.
+7. TinyLLaVA: arXiv 2024. Its original code URL (DLCV-BUAA/TinyLLaVABench) now redirects to TinyLLaVA/TinyLLaVA_Factory.
+
+Additional recent preprint
+LongForge (arXiv:2610.23167), submitted 2026-10-16, is independently verified on primary arXiv and is absent from the seven-item Scholar list. It is stored in additional_publications[] so the page may include it with an explicit preprint label. Authors: Ziyang Chen, Junlong Jia, Xing Wu, Tinghao Yu, Songlin Hu. Its arXiv-issued DOI was marked pending registration on the source.
+
+Primary source URLs and exact metadata are embedded beside every publication in publications.json. No citations/h-index counts are included because they change, and no unverified email, position, degree, CV, awards, or claims of sole repository ownership are inferred.
+
+Existing user-maintained GitHub homepage
+https://github.com/jiajunlong/jiajunlong.github.io/blob/main/index.md was read through the authenticated GitHub connection on 2026-10-20. It explicitly lists the user as a current PhD student at Beihang University's School of Artificial Intelligence and gives the public contact email used on the new homepage. The new page uses those directly stated details. The old file and _config.yml are retained in the GitHub repository and its history.

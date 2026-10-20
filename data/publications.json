@@ -1,0 +1,417 @@
+{
+  "verified_at": "2026-10-20",
+  "profile": {
+    "name": "Junlong Jia",
+    "name_zh": "贾俊龙",
+    "github_name": "Jaber",
+    "github_username": "jiajunlong",
+    "affiliation": "Beihang University",
+    "interests": [
+      "Long-context modeling",
+      "Multimodal large language models"
+    ],
+    "scholar": "https://scholar.google.com/citations?user=c9vYGLgAAAAJ&hl=en",
+    "github": "https://github.com/jiajunlong",
+    "huggingface": "https://huggingface.co/jiajunlong",
+    "openreview": "https://openreview.net/profile?id=~Junlong_Jia1",
+    "dblp": "https://dblp.org/pid/371/2687.html",
+    "current_position": null,
+    "email": null,
+    "notes": [
+      "Name and Scholar/GitHub identity cross-linked by Lacuna author profile; Chinese name verified on advisor Lei Huang's students page.",
+      "Beihang University and research interests directly confirmed on complete Google Scholar profile by parent agent through browser.",
+      "School of Artificial Intelligence, Beihang University is explicitly listed for Junlong Jia by the official AAAI LiteLong proceedings record.",
+      "No current role, exact email address, CV, or personal portrait has been inferred."
+    ],
+    "sources": [
+      "https://scholar.google.com/citations?user=c9vYGLgAAAAJ&hl=zh-CN&pagesize=100",
+      "https://github.com/jiajunlong",
+      "https://huggingface.co/jiajunlong",
+      "https://huangleibuaa.github.io/students.html",
+      "https://ojs.aaai.org/index.php/AAAI/article/view/40390",
+      "https://lacuna.tiptreesystems.com/author/junlong-jia/aut_c3a78b69708c4cd1a8352f6e98a07d25"
+    ]
+  },
+  "coverage": {
+    "scholar_complete": true,
+    "scholar_article_count": 7,
+    "method": "Parent agent read Google Scholar in browser with pagesize=100; exactly seven articles and disabled more button. Research agent independently verified every title in primary arXiv/proceedings records.",
+    "limits": [
+      "Web fetch of Google Scholar returned 403; browser evidence was supplied by parent agent.",
+      "OpenReview pages displayed a browser verification challenge in web fetch. PolicyLong venue is independently confirmed by arXiv v2; the Scholar conference author list differs from the current arXiv version.",
+      "Author lists differ between published and arXiv versions of PolicyLong and EntropyLong; variants are preserved below.",
+      "A newer LongForge preprint appears on arXiv but was absent from the seven-item Scholar profile; it is provided separately in additional_publications."
+    ]
+  },
+  "publications": [
+    {
+      "id": "policylong",
+      "title": "PolicyLong: Towards On-Policy Context Extension",
+      "authors": [
+        "Junlong Jia",
+        "Jiang Zhou",
+        "Ziyang Chen",
+        "Xing Wu",
+        "Chaochen Gao",
+        "TingHao Yu",
+        "Feng Zhang",
+        "Songlin Hu"
+      ],
+      "year": 2026,
+      "venue": "COLM 2026",
+      "venue_full": "Conference on Language Modeling",
+      "type": "conference",
+      "arxiv": "2604.07809",
+      "arxiv_url": "https://arxiv.org/abs/2604.07809",
+      "pdf": "https://arxiv.org/pdf/2604.07809",
+      "doi": "10.48550/arXiv.2604.07809",
+      "doi_type": "arXiv-issued DOI",
+      "openreview": "https://openreview.net/forum?id=jgdMN9TcOk",
+      "first_submitted": "2026-04-09",
+      "summary": "Refreshes long-context training data using the evolving model's uncertainty to create an on-policy curriculum.",
+      "sources": [
+        "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=c9vYGLgAAAAJ&pagesize=100&citation_for_view=c9vYGLgAAAAJ:zYLM7Y9cAGgC",
+        "https://arxiv.org/abs/2604.07809",
+        "https://arxiv.org/html/2604.07809v2"
+      ],
+      "versions": [
+        {
+          "version": "Google Scholar COLM 2026 record",
+          "authors": [
+            "Junlong Jia",
+            "Ziyang Chen",
+            "Xing Wu",
+            "Chaochen Gao",
+            "TingHao Yu",
+            "Feng Zhang",
+            "Songlin Hu"
+          ],
+          "source": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=c9vYGLgAAAAJ&pagesize=100&citation_for_view=c9vYGLgAAAAJ:zYLM7Y9cAGgC"
+        },
+        {
+          "version": "arXiv v2, revised 2026-08-28",
+          "authors": [
+            "Junlong Jia",
+            "Jiang Zhou",
+            "Ziyang Chen",
+            "Xing Wu",
+            "Chaochen Gao",
+            "TingHao Yu",
+            "Feng Zhang",
+            "Songlin Hu"
+          ],
+          "source": "https://arxiv.org/abs/2604.07809v2"
+        }
+      ],
+      "notes": [
+        "The page uses the latest primary arXiv v2 author list, which includes Jiang Zhou. The older Scholar seven-author version is preserved under versions. COLM 2026 is confirmed by Scholar and arXiv HTML v2."
+      ],
+      "urls": {
+        "paper": "https://arxiv.org/abs/2604.07809",
+        "arxiv": "https://arxiv.org/abs/2604.07809",
+        "pdf": "https://arxiv.org/pdf/2604.07809"
+      },
+      "topic": "Long-context language models",
+      "summary_zh": "根据模型在训练过程中的不确定性动态更新长上下文训练数据，形成同策略训练课程。"
+    },
+    {
+      "id": "longbench-pro",
+      "title": "LongBench Pro: A More Realistic and Comprehensive Bilingual Long-Context Evaluation Benchmark",
+      "authors": [
+        "Ziyang Chen",
+        "Xing Wu",
+        "Junlong Jia",
+        "Chaochen Gao",
+        "Qi Fu",
+        "Debing Zhang",
+        "Songlin Hu"
+      ],
+      "year": 2026,
+      "venue": "arXiv 2026",
+      "venue_full": "arXiv preprint",
+      "type": "preprint",
+      "arxiv": "2601.02872",
+      "arxiv_url": "https://arxiv.org/abs/2601.02872",
+      "pdf": "https://arxiv.org/pdf/2601.02872",
+      "doi": "10.48550/arXiv.2601.02872",
+      "doi_type": "arXiv-issued DOI",
+      "first_submitted": "2026-01-06",
+      "summary": "A bilingual benchmark of 1,500 natural long-context samples spanning 11 primary tasks and 25 secondary tasks.",
+      "sources": [
+        "https://arxiv.org/abs/2601.02872"
+      ],
+      "urls": {
+        "paper": "https://arxiv.org/abs/2601.02872",
+        "arxiv": "https://arxiv.org/abs/2601.02872",
+        "pdf": "https://arxiv.org/pdf/2601.02872"
+      },
+      "topic": "Long-context language models",
+      "summary_zh": "包含 1,500 条真实长上下文样本的双语评测基准，涵盖 11 类主要任务和 25 类细分任务。"
+    },
+    {
+      "id": "entropylong",
+      "title": "EntropyLong: Effective Long-Context Training via Predictive Uncertainty",
+      "authors": [
+        "Junlong Jia",
+        "Ziyang Chen",
+        "Xing Wu",
+        "Chaochen Gao",
+        "Zijia Lin",
+        "Songlin Hu",
+        "Binghui Guo"
+      ],
+      "year": 2026,
+      "venue": "ICLR 2026",
+      "venue_full": "International Conference on Learning Representations",
+      "type": "conference",
+      "arxiv": "2510.02330",
+      "arxiv_url": "https://arxiv.org/abs/2510.02330",
+      "pdf": "https://proceedings.iclr.cc/paper_files/paper/2026/file/07e278a120830b10aae20cc600a8c07b-Paper-Conference.pdf",
+      "doi": "10.48550/arXiv.2510.02330",
+      "doi_type": "arXiv-issued DOI",
+      "openreview": "https://openreview.net/forum?id=SFXX5Pjl5K",
+      "proceedings": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/07e278a120830b10aae20cc600a8c07b-Abstract-Conference.html",
+      "first_submitted": "2025-09-26",
+      "summary": "Constructs long-context training data by using predictive uncertainty to verify useful long-range dependencies.",
+      "sources": [
+        "https://proceedings.iclr.cc/paper_files/paper/2026/hash/07e278a120830b10aae20cc600a8c07b-Abstract-Conference.html",
+        "https://arxiv.org/abs/2510.02330"
+      ],
+      "versions": [
+        {
+          "version": "ICLR 2026 proceedings",
+          "authors": [
+            "Junlong Jia",
+            "Ziyang Chen",
+            "Xing Wu",
+            "Chaochen Gao",
+            "Zijia Lin",
+            "Songlin Hu",
+            "Binghui Guo"
+          ],
+          "source": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/07e278a120830b10aae20cc600a8c07b-Abstract-Conference.html"
+        },
+        {
+          "version": "arXiv v1, 2025-09-26",
+          "authors": [
+            "Junlong Jia",
+            "Ziyang Chen",
+            "Xing Wu",
+            "Chaochen Gao",
+            "Zijia Lin",
+            "Debing Zhang",
+            "Songlin Hu",
+            "Binghui Guo"
+          ],
+          "source": "https://arxiv.org/abs/2510.02330v1"
+        }
+      ],
+      "urls": {
+        "paper": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/07e278a120830b10aae20cc600a8c07b-Abstract-Conference.html",
+        "arxiv": "https://arxiv.org/abs/2510.02330",
+        "pdf": "https://proceedings.iclr.cc/paper_files/paper/2026/file/07e278a120830b10aae20cc600a8c07b-Paper-Conference.pdf"
+      },
+      "topic": "Long-context language models",
+      "arxiv_pdf": "https://arxiv.org/pdf/2510.02330",
+      "summary_zh": "利用预测不确定性验证有效的长程依赖关系，构建长上下文训练数据。"
+    },
+    {
+      "id": "litelong",
+      "title": "LiteLong: Resource-Efficient Long-Context Data Synthesis for LLMs",
+      "authors": [
+        "Junlong Jia",
+        "Xing Wu",
+        "Chaochen Gao",
+        "Ziyang Chen",
+        "Zijia Lin",
+        "Zhongzhi Li",
+        "Weinong Wang",
+        "Haotian Xu",
+        "Donghui Jin",
+        "Debing Zhang",
+        "Binghui Guo"
+      ],
+      "year": 2026,
+      "venue": "AAAI 2026",
+      "venue_full": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "type": "conference",
+      "volume": "40",
+      "issue": "37",
+      "pages": "31274–31282",
+      "published": "2026-03-14",
+      "arxiv": "2509.15568",
+      "arxiv_url": "https://arxiv.org/abs/2509.15568",
+      "pdf": "https://arxiv.org/pdf/2509.15568",
+      "doi": "10.1609/aaai.v40i37.40390",
+      "doi_type": "proceedings DOI",
+      "arxiv_doi": "10.48550/arXiv.2509.15568",
+      "proceedings": "https://ojs.aaai.org/index.php/AAAI/article/view/40390",
+      "first_submitted": "2025-09-19",
+      "summary": "Synthesizes long-context data through structured topic organization, multi-agent debate, and lightweight document retrieval.",
+      "sources": [
+        "https://ojs.aaai.org/index.php/AAAI/article/view/40390",
+        "https://arxiv.org/abs/2509.15568"
+      ],
+      "urls": {
+        "paper": "https://ojs.aaai.org/index.php/AAAI/article/view/40390",
+        "arxiv": "https://arxiv.org/abs/2509.15568",
+        "pdf": "https://arxiv.org/pdf/2509.15568"
+      },
+      "topic": "Long-context language models",
+      "summary_zh": "通过结构化主题组织、多智能体辩论和轻量级文档检索，合成长上下文数据。"
+    },
+    {
+      "id": "layer-normalization",
+      "title": "On the Nonlinearity of Layer Normalization",
+      "authors": [
+        "Yunhao Ni",
+        "Yuxin Guo",
+        "Junlong Jia",
+        "Lei Huang"
+      ],
+      "year": 2024,
+      "venue": "ICML 2024",
+      "venue_full": "Proceedings of the 41st International Conference on Machine Learning",
+      "type": "conference",
+      "volume": "235",
+      "pages": "37957–37998",
+      "arxiv": "2406.01255",
+      "arxiv_url": "https://arxiv.org/abs/2406.01255",
+      "pdf": "https://raw.githubusercontent.com/mlresearch/v235/main/assets/ni24b/ni24b.pdf",
+      "doi": "10.48550/arXiv.2406.01255",
+      "doi_type": "arXiv-issued DOI",
+      "proceedings": "https://proceedings.mlr.press/v235/ni24b.html",
+      "openreview": "https://openreview.net/forum?id=18f6iPn0zq",
+      "first_submitted": "2024-06-03",
+      "summary": "Studies the nonlinearity and representation capacity of layer normalization, including group-based layer normalization.",
+      "sources": [
+        "https://proceedings.mlr.press/v235/ni24b.html",
+        "https://arxiv.org/abs/2406.01255"
+      ],
+      "urls": {
+        "paper": "https://proceedings.mlr.press/v235/ni24b.html",
+        "arxiv": "https://arxiv.org/abs/2406.01255",
+        "pdf": "https://raw.githubusercontent.com/mlresearch/v235/main/assets/ni24b/ni24b.pdf"
+      },
+      "topic": "Neural network theory",
+      "summary_zh": "研究层归一化及其分组变体的非线性与表征能力。"
+    },
+    {
+      "id": "tinyllava-factory",
+      "title": "TinyLLaVA Factory: A Modularized Codebase for Small-scale Large Multimodal Models",
+      "authors": [
+        "Junlong Jia",
+        "Ying Hu",
+        "Xi Weng",
+        "Yiming Shi",
+        "Miao Li",
+        "Xingjian Zhang",
+        "Baichuan Zhou",
+        "Ziyu Liu",
+        "Jie Luo",
+        "Lei Huang",
+        "Ji Wu"
+      ],
+      "year": 2024,
+      "venue": "arXiv 2024",
+      "venue_full": "arXiv preprint",
+      "type": "preprint",
+      "arxiv": "2405.11788",
+      "arxiv_url": "https://arxiv.org/abs/2405.11788",
+      "pdf": "https://arxiv.org/pdf/2405.11788",
+      "doi": "10.48550/arXiv.2405.11788",
+      "doi_type": "arXiv-issued DOI",
+      "code": "https://github.com/TinyLLaVA/TinyLLaVA_Factory",
+      "documentation": "https://tinyllava-factory.readthedocs.io/en/latest/",
+      "first_submitted": "2024-05-20",
+      "summary": "An open-source modular codebase for training and extending small-scale large multimodal models.",
+      "sources": [
+        "https://arxiv.org/abs/2405.11788",
+        "https://github.com/TinyLLaVA/TinyLLaVA_Factory"
+      ],
+      "urls": {
+        "paper": "https://arxiv.org/abs/2405.11788",
+        "arxiv": "https://arxiv.org/abs/2405.11788",
+        "pdf": "https://arxiv.org/pdf/2405.11788",
+        "code": "https://github.com/TinyLLaVA/TinyLLaVA_Factory",
+        "project": "https://tinyllava-factory.readthedocs.io/en/latest/"
+      },
+      "topic": "Multimodal models",
+      "summary_zh": "面向小规模多模态大模型训练与扩展的开源模块化代码库。"
+    },
+    {
+      "id": "tinyllava",
+      "title": "TinyLLaVA: A Framework of Small-scale Large Multimodal Models",
+      "authors": [
+        "Baichuan Zhou",
+        "Ying Hu",
+        "Xi Weng",
+        "Junlong Jia",
+        "Jie Luo",
+        "Xien Liu",
+        "Ji Wu",
+        "Lei Huang"
+      ],
+      "year": 2024,
+      "venue": "arXiv 2024",
+      "venue_full": "arXiv preprint",
+      "type": "preprint",
+      "arxiv": "2402.14289",
+      "arxiv_url": "https://arxiv.org/abs/2402.14289",
+      "pdf": "https://arxiv.org/pdf/2402.14289",
+      "doi": "10.48550/arXiv.2402.14289",
+      "doi_type": "arXiv-issued DOI",
+      "code": "https://github.com/TinyLLaVA/TinyLLaVA_Factory",
+      "first_submitted": "2024-02-22",
+      "summary": "A framework for systematically studying model components, data quality, and training recipes for small multimodal models.",
+      "sources": [
+        "https://arxiv.org/abs/2402.14289"
+      ],
+      "urls": {
+        "paper": "https://arxiv.org/abs/2402.14289",
+        "arxiv": "https://arxiv.org/abs/2402.14289",
+        "pdf": "https://arxiv.org/pdf/2402.14289",
+        "code": "https://github.com/TinyLLaVA/TinyLLaVA_Factory"
+      },
+      "topic": "Multimodal models",
+      "summary_zh": "系统研究小规模多模态模型的组件、数据质量和训练方案的统一框架。"
+    }
+  ],
+  "additional_publications": [
+    {
+      "id": "longforge",
+      "title": "LongForge: Measuring and Improving Long-Context Instruction Data via Evidence-Assertion Reasoning Graphs",
+      "authors": [
+        "Ziyang Chen",
+        "Junlong Jia",
+        "Xing Wu",
+        "Tinghao Yu",
+        "Songlin Hu"
+      ],
+      "year": 2026,
+      "venue": "arXiv 2026",
+      "venue_full": "arXiv preprint",
+      "type": "preprint",
+      "arxiv": "2610.23167",
+      "arxiv_url": "https://arxiv.org/abs/2610.23167",
+      "pdf": "https://arxiv.org/pdf/2610.23167",
+      "doi": "10.48550/arXiv.2610.23167",
+      "doi_type": "arXiv-issued DOI, pending registration on source at verification",
+      "first_submitted": "2026-10-16",
+      "summary": "Measures and improves long-context instruction data using evidence-assertion reasoning graphs.",
+      "sources": [
+        "https://arxiv.org/abs/2610.23167"
+      ],
+      "notes": [
+        "Absent from the seven-article Scholar profile read by parent agent. A verified new preprint; optional inclusion beyond exact Scholar coverage."
+      ],
+      "urls": {
+        "paper": "https://arxiv.org/abs/2610.23167",
+        "arxiv": "https://arxiv.org/abs/2610.23167",
+        "pdf": "https://arxiv.org/pdf/2610.23167"
+      },
+      "topic": "Long-context language models",
+      "summary_zh": "利用证据—断言推理图衡量并改进长上下文指令数据。"
+    }
+  ]
+}
