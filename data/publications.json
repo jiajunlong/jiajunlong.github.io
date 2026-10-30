@@ -1,5 +1,5 @@
 {
-  "verified_at": "2026-10-20",
+  "verified_at": "2026-10-30",
   "profile": {
     "name": "Junlong Jia",
     "name_zh": "贾俊龙",
@@ -40,8 +40,10 @@
       "Web fetch of Google Scholar returned 403; browser evidence was supplied by parent agent.",
       "OpenReview pages displayed a browser verification challenge in web fetch. PolicyLong venue is independently confirmed by arXiv v2; the Scholar conference author list differs from the current arXiv version.",
       "Author lists differ between published and arXiv versions of PolicyLong and EntropyLong; variants are preserved below.",
-      "A newer LongForge preprint appears on arXiv but was absent from the seven-item Scholar profile; it is provided separately in additional_publications."
-    ]
+      "A newer LongForge preprint appears on arXiv but was absent from the seven-item Scholar profile; it is provided separately in additional_publications.",
+      "Which Long Documents Matter? (arXiv:2610.24469) was independently verified in primary arXiv sources and added on 2026-10-30; the original seven-item Scholar coverage is a dated snapshot."
+    ],
+    "scholar_verified_at": "2026-10-20"
   },
   "publications": [
     {
@@ -378,6 +380,48 @@
     }
   ],
   "additional_publications": [
+    {
+      "id": "which-long-documents-matter",
+      "title": "Which Long Documents Matter? A Controlled Study of Data Selection for Context Extension",
+      "authors": [
+        "Junlong Jia",
+        "Jiang Zhou",
+        "Xing Wu",
+        "Chaochen Gao",
+        "Tinghao Yu",
+        "Feng Zhang",
+        "Lilin Wang"
+      ],
+      "year": 2026,
+      "venue": "arXiv 2026",
+      "venue_full": "arXiv preprint",
+      "type": "preprint",
+      "arxiv": "2610.24469",
+      "arxiv_url": "https://arxiv.org/abs/2610.24469",
+      "pdf": "https://arxiv.org/pdf/2610.24469",
+      "doi": "10.48550/arXiv.2610.24469",
+      "doi_type": "arXiv-issued DOI",
+      "first_submitted": "2026-10-17",
+      "summary": "A controlled study of natural long-document selection for context extension, introducing truncLongPPL to retain the benefits of long-dependency scoring at lower cost.",
+      "summary_zh": "在统一实验条件下研究上下文扩展中的自然长文档筛选，并提出 truncLongPPL，以更低成本保留长程依赖评分带来的收益。",
+      "sources": [
+        "https://arxiv.org/abs/2610.24469",
+        "https://arxiv.org/html/2610.24469v1",
+        "https://arxiv.org/pdf/2610.24469"
+      ],
+      "urls": {
+        "paper": "https://arxiv.org/abs/2610.24469",
+        "arxiv": "https://arxiv.org/abs/2610.24469",
+        "pdf": "https://arxiv.org/pdf/2610.24469"
+      },
+      "topic": "Long-context language models",
+      "notes": [
+        "Verified 2026-10-30 from primary arXiv abstract, HTML, and PDF.",
+        "The arXiv abstract author metadata incorrectly combines Chaochen Gao and Tinghao Yu into a single linked author. Both the HTML author block and the PDF first page clearly list them as separate authors; the seven-author list follows the paper.",
+        "The paper identifies Hunyuan Team, Tencent as its author affiliation. This is paper-specific and does not by itself change homepage profile affiliation.",
+        "No official project or code URL was found in the abstract or HTML; no code URL has been inferred."
+      ]
+    },
     {
       "id": "longforge",
       "title": "LongForge: Measuring and Improving Long-Context Instruction Data via Evidence-Assertion Reasoning Graphs",

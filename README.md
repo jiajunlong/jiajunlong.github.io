@@ -26,7 +26,7 @@ python3 -m http.server 8000 --bind 127.0.0.1 --directory dist
 
 请编辑源数据后重新运行 `node scripts/build.mjs`。`dist/index.html`（英文）、`dist/zh/index.html`（中文）、`dist/data/publications.json` 和 `dist/data/publications.bib` 为生成文件，直接编辑会在下次生成时被覆盖。两种语言共用样式、脚本、图片和 BibTeX；论文标题和作者保留原文。增补论文时按现有字段格式填写中英文简介，并将 `scripts/build.mjs` 中的论文顺序和主题映射同步调整。
 
-截至 2026 年 10 月 20 日，页面收录了所提供 [Google Scholar 主页](https://scholar.google.com/citations?user=c9vYGLgAAAAJ&hl=zh-CN)中的全部 7 篇论文，并另收录 [LongForge](https://arxiv.org/abs/2610.23167) 最新预印本。会议和作者信息经 arXiv、官方会议论文集交叉核验；PolicyLong 与 EntropyLong 的版本作者差异保存在源数据中。具体来源见每篇论文的 `sources` 字段和 `data/SOURCES.txt`。
+截至 2026 年 10 月 20 日，页面收录了所提供 [Google Scholar 主页](https://scholar.google.com/citations?user=c9vYGLgAAAAJ&hl=zh-CN)中的全部 7 篇论文，并另收录 [LongForge](https://arxiv.org/abs/2610.23167) 预印本。2026 年 10 月 30 日新增 [Which Long Documents Matter?](https://arxiv.org/abs/2610.24469)，当前共收录 9 篇论文与预印本。会议和作者信息经 arXiv、官方会议论文集交叉核验；PolicyLong 与 EntropyLong 的版本作者差异保存在源数据中。具体来源见每篇论文的 `sources` 字段和 `data/SOURCES.txt`。
 
 头像从上述公开 Scholar 主页下载保存在本地，项目架构图来自 [TinyLLaVA Factory 仓库](https://github.com/TinyLLaVA/TinyLLaVA_Factory)。可替换 `dist/assets/profile.jpg` 为自己的清晰照片。博士生身份和公开邮箱来自原有 GitHub 主页的 `index.md`；可在 `data/profile.json` 中修改后重新生成。主页资料为本次核验的静态快照，后续论文需要手动更新。
 

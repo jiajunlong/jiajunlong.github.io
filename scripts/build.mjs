@@ -64,8 +64,9 @@ function renderPaper(paper, lang) {
     </div></article>`;
 }
 const years = [...new Set(papers.map(p => p.year))].sort((a,b)=>b-a);
-const order = ['longforge','policylong','entropylong','litelong','longbench-pro','layer-normalization','tinyllava-factory','tinyllava'];
-papers.sort((a,b)=>order.indexOf(a.id)-order.indexOf(b.id));
+const order = ['which-long-documents-matter','longforge','policylong','entropylong','litelong','longbench-pro','layer-normalization','tinyllava-factory','tinyllava'];
+const rank = id => order.includes(id) ? order.indexOf(id) : order.length;
+papers.sort((a,b)=>rank(a.id)-rank(b.id));
 const structuredData = { '@context':'https://schema.org', '@type':'Person', name:profile.name, alternateName:profile.chineseName, affiliation:{'@type':'CollegeOrUniversity',name:profile.affiliation}, sameAs:[profile.scholar,profile.github], knowsAbout:['Long-context modeling','Multimodal large language models'] };
 function renderRepositoryStats(lang) {
   const zh = lang === 'zh';

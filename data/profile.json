@@ -9,12 +9,12 @@
   "photo": "assets/profile.jpg",
   "intro": "My research focuses on long-context modeling and multimodal large language models.",
   "bio": "I am a Ph.D. student in the School of Artificial Intelligence at Beihang University. I am interested in making language and vision-language models more effective and efficient through better data, training methods, and evaluation. My work spans long-context data synthesis, context extension, and small-scale multimodal models.",
-  "updated": "October 2026",
+  "updated": "October 30, 2026",
   "affiliationZh": "北京航空航天大学",
   "departmentZh": "人工智能学院",
   "introZh": "我的研究方向是长上下文建模与多模态大语言模型。",
   "bioZh": "我是北京航空航天大学人工智能学院的博士研究生。我关注如何通过改进数据、训练方法和评测，提升语言模型与视觉语言模型的效果和效率。我的工作涵盖长上下文数据合成、上下文扩展，以及小规模多模态模型。",
-  "updatedZh": "2026 年 10 月",
+  "updatedZh": "2026 年 10 月 30 日",
   "role": "Ph.D. Student",
   "roleZh": "博士研究生"
 }
